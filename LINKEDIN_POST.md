@@ -1,6 +1,4 @@
-# Post para LinkedIn — Trigger de conteo de contactos activos
-
-> Copia el texto de abajo tal cual, o ajústalo a tu estilo antes de publicar.
+# Contact Tracing - Formación.
 
 ---
 
@@ -18,7 +16,7 @@ Así que lo he reescrito para cubrir el ciclo completo:
 ✅ Update — detecta las transiciones reales comparando `Trigger.oldMap` vs `Trigger.new` (activo→inactivo, inactivo→activo, cambio de cuenta) y ajusta solo lo que cambió
 ✅ Delete — resta el contacto borrado si contaba como activo
 
-Todo con un patrón bulk-safe: se acumulan los cambios netos por cuenta en un `Map<Id, Integer>` dentro del loop, y solo se hace **una** query y **un** `update` al final — nunca SOQL ni DML dentro de un bucle, que es de las primeras reglas que se aprenden (y se rompen) en Apex.
+Todo con un patrón bulk-safe: se acumulan los cambios netos por cuenta en un `Map<Id, Integer>` dentro del loop, y solo se hace una query y un `update` al final — nunca SOQL ni DML dentro de un bucle, que es de las primeras reglas que se aprenden (y se rompen) en Apex.
 
 Si quieres montar esta funcionalidad en tu propio Org, solo necesitas dos campos:
 - `Active__c` (Checkbox) en `Contact`
